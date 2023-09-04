@@ -32,5 +32,3 @@
 {{URL}}/reports/trackers
 <p>Halaman untuk menampilkan riwayat perubahan status dari laporan</p>
 <img src="https://github.com/dafariski77/task1-ads-be/assets/94169174/69e5e1aa-deae-4a4b-865d-f73a231feabf">
-
-
