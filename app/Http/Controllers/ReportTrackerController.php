@@ -11,10 +11,13 @@ class ReportTrackerController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            $reportTrackers = ReportTracker::query();
+            $reportTrackers = ReportTracker::with('user');
 
             return DataTables::of($reportTrackers)
                 ->addIndexColumn()
+                ->addColumn('user', function ($item) {
+                    return $item->user->name;
+                })
                 ->make();
         }
 

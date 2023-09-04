@@ -124,12 +124,12 @@
                         width: '5%'
                     },
                     {
-                        data: 'reporter_id',
-                        name: 'reporter_id',
+                        data: 'reporter',
+                        name: 'reporter.name',
                     },
                     {
-                        data: 'category_id',
-                        name: 'category_id',
+                        data: 'category',
+                        name: 'category.name',
                     },
                     {
                         data: 'ticket_id',

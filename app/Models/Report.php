@@ -38,7 +38,9 @@ class Report extends Model implements HasMedia
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class)->withDefault([
+            "name" => "null"
+        ]);
     }
 
     public function reportTracker()

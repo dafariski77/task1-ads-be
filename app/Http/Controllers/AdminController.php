@@ -13,7 +13,7 @@ class AdminController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            $reports = Report::all();
+            $reports = Report::with('reporter', 'category');
 
             return DataTables::of($reports)
                 ->addIndexColumn()
@@ -28,6 +28,12 @@ class AdminController extends Controller
                     }
 
                     return $mediaLinks;
+                })
+                ->addColumn('reporter', function($reports) {
+                    return $reports->reporter->name;
+                })
+                ->addColumn('category', function($reports) {
+                    return $reports->category->name;
                 })
                 ->rawColumns(['action', 'media'])
                 ->make();
