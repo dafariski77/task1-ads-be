@@ -21,8 +21,13 @@ class AdminController extends Controller
                     return '<button class="btn btn-primary edit-button" data-id="' . $reports->id . '">Edit</button>';
                 })
                 ->addColumn('media', function ($report) {
-                    $media = $report->getMedia('documents')->toArray();
-                    return $media;
+                    $mediaLinks = '';
+
+                    foreach ($report->getMedia('documents') as $media) {
+                        $mediaLinks .= '<a href="' . $media->getUrl() . '" target="_blank">' . $media->name . '</a><br>';
+                    }
+
+                    return $mediaLinks;
                 })
                 ->rawColumns(['action', 'media'])
                 ->make();

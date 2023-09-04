@@ -153,17 +153,7 @@
                         orderable: false,
                         searchable: false,
                         render: function(data, type, full, meta) {
-                            var mediaHtml = '';
-
-                            // Check if media items exist
-                            if (data && data.length > 0) {
-                                // Loop through the media and create HTML for each media item
-                                data.forEach(function(mediaItem) {
-                                    mediaHtml += '<a href="' + mediaItem.url + '" target="_blank">' + mediaItem.name + '</a><br>';
-                                });
-                            }
-
-                            return mediaHtml;
+                            return data;
                         }
                     },
                     {
